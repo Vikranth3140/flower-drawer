@@ -8,6 +8,8 @@ def draw_flower(name, message):
     colors = ["purple", "blue", "green", "yellow", "orange"]
 
     t.speed(0)
+
+    # Drawing the flower
     for i in range(150):
         t.pencolor(colors[i % len(colors)])
         t.circle(190 - i, 90)
@@ -15,6 +17,7 @@ def draw_flower(name, message):
         t.circle(190 - i, 90)
         t.lt(18)
 
+    # Writing the name and the message
     t.penup()
     t.goto(0, 300)
     t.pendown()
@@ -22,6 +25,22 @@ def draw_flower(name, message):
     t.penup()
     t.goto(0, 250)
     t.write(f"{message}", align="center", font=("Script MT Bold", 40, "italic"))
+
+    # Drawing the Heart
+    t.penup()
+    t.goto(0, -375)
+    t.pendown()
+    t.color("red")
+    t.begin_fill()
+    t.left(50)
+    t.forward(100)
+    t.circle(25, 200)
+    t.right(140)
+    t.circle(25, 200)
+    t.forward(100)
+    t.end_fill()
+
+    t.hideturtle()
 
     turtle.done()
 
